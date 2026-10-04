@@ -3,7 +3,6 @@ title: PoC AI Agent
 slug: poc-agent
 summary: Triage AgentをStreamlit・FastAPI・SQLiteで、ブラウザから使えるPoCアプリケーションへ発展させたプロジェクト
 order: 2
-github: https://github.com/tigerone1945/triage-agent
 techStack: [Python, Streamlit, FastAPI, SQLite, OpenAI Agents SDK, httpx]
 ---
 
@@ -63,7 +62,7 @@ SQLite（output/triage.db。追記のみ）
 
 ## Repository
 
-実装は [tigerone1945/triage-agent](https://github.com/tigerone1945/triage-agent) の `course05-validate` ブランチ（タグ `course05-v1.0`）にあります。
+ソースコードは非公開です。詳細はご相談ください。
 
 ## Related Contents
 

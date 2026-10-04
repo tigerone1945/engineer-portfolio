@@ -3,7 +3,6 @@ title: Triage AI Agent
 slug: triage-agent
 summary: 問い合わせの分類・優先度判定・担当部署への振り分けを行い、迷うケースは人間の確認へ回す業務向けAIエージェント
 order: 1
-github: https://github.com/tigerone1945/triage-agent
 techStack: [Python, OpenAI Agents SDK, Structured Output, Guardrails, Tracing, Pydantic, uv, pytest, mypy]
 ---
 
@@ -65,7 +64,7 @@ AI Agent（分類のみ）
 
 ## Repository
 
-実装は [tigerone1945/triage-agent](https://github.com/tigerone1945/triage-agent) の `course04-build` ブランチ（タグ `course04-v1.0`）にあります。
+ソースコードは非公開です。詳細はご相談ください。
 
 ## Related Contents
 

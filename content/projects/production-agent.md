@@ -3,7 +3,6 @@ title: Production AI Agent
 slug: production-agent
 summary: PoCのAIエージェントを、Docker・PostgreSQL・Terraformで、AWS上で運用できる構成へ発展させたプロジェクト
 order: 3
-github: https://github.com/tigerone1945/triage-agent
 techStack: [Python, FastAPI, Streamlit, PostgreSQL, Docker, AWS, Terraform]
 ---
 
@@ -82,7 +81,7 @@ Amazon RDS for PostgreSQL（プライベートサブネット）
 
 ## Repository
 
-実装は [tigerone1945/triage-agent](https://github.com/tigerone1945/triage-agent) の `course06-operate` ブランチにあります。
+ソースコードは非公開です。詳細はご相談ください。
 
 ## Related Contents
 
