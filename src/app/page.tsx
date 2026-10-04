@@ -1,13 +1,13 @@
-import Button from "@/components/ui/Button";
-import SectionTitle from "@/components/ui/SectionTitle";
+import FeaturedProjects from "@/components/sections/FeaturedProjects";
+import Hero from "@/components/sections/Hero";
+import { getAllProjects } from "@/lib/projects";
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getAllProjects();
   return (
-    <section>
-      <SectionTitle as="h1" title="Yozo Maeda" subtitle="AI Agent / DX Engineer" />
-      <div className="flex gap-3">
-        <Button href="/projects">Projects</Button>
-      </div>
-    </section>
+    <>
+      <Hero />
+      <FeaturedProjects projects={projects} />
+    </>
   );
 }
