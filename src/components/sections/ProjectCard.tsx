@@ -2,11 +2,13 @@ import Link from "next/link";
 import Card from "@/components/ui/Card";
 import type { Project } from "@/types/project";
 
-export default function ProjectCard({ project }: { project: Project }) {
+type Props = { project: Project; headingLevel?: "h2" | "h3" };
+
+export default function ProjectCard({ project, headingLevel: Heading = "h3" }: Props) {
   return (
     <Link href={`/projects/${project.slug}`} className="block h-full">
       <Card className="h-full transition-colors hover:border-muted">
-        <h3 className="font-semibold">{project.title}</h3>
+        <Heading className="font-semibold">{project.title}</Heading>
         <p className="mt-2 text-sm text-muted">{project.summary}</p>
         {project.techStack.length > 0 ? (
           <ul className="mt-4 flex flex-wrap gap-2">
