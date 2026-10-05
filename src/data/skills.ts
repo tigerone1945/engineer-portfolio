@@ -18,6 +18,7 @@ export const skills: SkillCategory[] = [
       "Context Engineering",
       "Amazon Bedrock",
       "Amazon Bedrock AgentCore",
+      "Dify",
     ],
   },
   { category: "Backend / UI", items: ["FastAPI", "Streamlit", "REST API"] },
