@@ -6,6 +6,7 @@ export const navItems = [
   { href: "/skills", label: "Skills" },
   { href: "/projects", label: "Projects" },
   { href: "/articles", label: "Articles" },
+  { href: "/publications", label: "Publications" },
 ];
 
 export default function Header() {
