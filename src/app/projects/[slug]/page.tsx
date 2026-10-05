@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import ArticleList from "@/components/sections/ArticleList";
 import Button from "@/components/ui/Button";
 import Prose from "@/components/ui/Prose";
+import { getArticlesByProject } from "@/lib/articles";
 import { getProjectBySlug, getProjectSlugs } from "@/lib/projects";
 
 export const dynamicParams = false;
@@ -22,6 +24,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
   const { slug } = await params;
   const project = await getProjectBySlug(slug);
   if (!project) notFound();
+  const articles = await getArticlesByProject(slug);
 
   return (
     <article>
@@ -37,6 +40,14 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
       <div className="mt-8">
         <Prose html={project.html} />
       </div>
+      {articles.length > 0 ? (
+        <section className="mt-12" aria-labelledby="related-articles">
+          <h2 id="related-articles" className="mb-4 text-xl font-semibold">
+            Related Articles
+          </h2>
+          <ArticleList articles={articles} />
+        </section>
+      ) : null}
     </article>
   );
 }

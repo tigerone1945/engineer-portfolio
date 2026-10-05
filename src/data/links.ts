@@ -2,8 +2,8 @@
 // the UI shows the name as plain text instead of a link.
 export const links = {
   github: "https://github.com/tigerone1945",
-  zenn: "",
-  note: "",
+  zenn: "https://zenn.dev/tigerone1945",
+  note: "https://note.com/loyal_hyssop7944",
   udemy: "",
   kindle: "",
 };

@@ -2,9 +2,12 @@ import { describe, expect, it } from "vitest";
 import { links, getLinkEntries } from "./links";
 
 describe("links", () => {
-  it("leaves publication URLs empty in v1.0", () => {
-    expect(links.zenn).toBe("");
-    expect(links.note).toBe("");
+  it("publishes the Zenn and note profiles (v1.1)", () => {
+    expect(links.zenn).toBe("https://zenn.dev/tigerone1945");
+    expect(links.note).toBe("https://note.com/loyal_hyssop7944");
+  });
+
+  it("leaves Udemy and Kindle URLs empty until v1.2", () => {
     expect(links.udemy).toBe("");
     expect(links.kindle).toBe("");
   });
