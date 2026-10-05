@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { getKindleBooks } from "./publications";
+import { getKindleBooks, getUdemyCourses } from "./publications";
 
 let dir: string;
 
@@ -88,9 +88,40 @@ describe("getKindleBooks", () => {
   });
 });
 
+describe("getUdemyCourses", () => {
+  const course = (slug: string, order: number) =>
+    `title: T-${slug}\nurl: https://www.udemy.com/course/${slug}/\norder: ${order}`;
+
+  it("sorts by order ascending", async () => {
+    write("b.md", course("course-b", 2));
+    write("a.md", course("course-a", 1));
+    expect((await getUdemyCourses(dir)).map((c) => c.id)).toEqual(["a", "b"]);
+  });
+
+  it.each([
+    ["a missing trailing slash", "https://www.udemy.com/course/dify-fxv"],
+    ["a missing scheme", "udemy.com/course/dify-fxv/"],
+    ["http", "http://www.udemy.com/course/dify-fxv/"],
+    ["a coupon parameter", "https://www.udemy.com/course/dify-fxv/?couponCode=ABC"],
+    ["a look-alike host", "https://www.udemy.com.evil.example/course/dify-fxv/"],
+    ["an Amazon URL", "https://www.amazon.co.jp/dp/B0AAAAAAA1"],
+  ])("rejects %s", async (_name, url) => {
+    write("a.md", `title: a\nurl: ${url}\norder: 1`);
+    await expect(getUdemyCourses(dir)).rejects.toThrow("udemy.com/course/<slug>/");
+  });
+
+  it("does not accept a Udemy URL as a Kindle book", async () => {
+    write("a.md", course("course-a", 1));
+    await expect(getKindleBooks(dir)).rejects.toThrow("amazon.co.jp/dp/<ASIN>");
+  });
+});
+
 describe("published content", () => {
   it("lists the four Kindle books", async () => {
-    const books = await getKindleBooks();
-    expect(books).toHaveLength(4);
+    expect(await getKindleBooks()).toHaveLength(4);
+  });
+
+  it("lists the two Udemy courses", async () => {
+    expect(await getUdemyCourses()).toHaveLength(2);
   });
 });

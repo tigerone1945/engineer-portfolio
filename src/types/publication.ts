@@ -1,3 +1,5 @@
+export type PublicationKind = "kindle" | "udemy";
+
 export type Publication = {
   /** Filename without extension. */
   id: string;
