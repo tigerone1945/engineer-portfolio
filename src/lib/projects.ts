@@ -1,20 +1,13 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import type { Project, ProjectDetail } from "@/types/project";
+import { requireString } from "./frontmatter";
 import { markdownToHtml, parseMarkdown } from "./markdown";
 
 const DEFAULT_DIR = path.join(process.cwd(), "content", "projects");
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 type Loaded = { project: Project; content: string };
-
-function requireString(data: Record<string, unknown>, field: string, source: string): string {
-  const value = data[field];
-  if (typeof value !== "string" || value.trim() === "") {
-    throw new Error(`${source}: missing or invalid "${field}"`);
-  }
-  return value;
-}
 
 async function loadFile(dir: string, file: string): Promise<Loaded> {
   const source = file;

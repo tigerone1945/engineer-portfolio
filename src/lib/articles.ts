@@ -1,6 +1,7 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import type { Article, ArticlePlatform } from "@/types/article";
+import { requireString } from "./frontmatter";
 import { parseMarkdown } from "./markdown";
 
 const DEFAULT_DIR = path.join(process.cwd(), "content", "articles");
@@ -13,14 +14,6 @@ const PLATFORM_HOSTS: Record<ArticlePlatform, string> = {
   zenn: "zenn.dev",
   note: "note.com",
 };
-
-function requireString(data: Record<string, unknown>, field: string, source: string): string {
-  const value = data[field];
-  if (typeof value !== "string" || value.trim() === "") {
-    throw new Error(`${source}: missing or invalid "${field}"`);
-  }
-  return value;
-}
 
 // YAML turns an unquoted `2026-10-04` into a Date; accept both spellings.
 function readDate(data: Record<string, unknown>, source: string): string {
