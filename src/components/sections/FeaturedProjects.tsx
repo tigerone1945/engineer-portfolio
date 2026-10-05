@@ -4,8 +4,8 @@ import Button from "@/components/ui/Button";
 import SectionTitle from "@/components/ui/SectionTitle";
 import type { Project } from "@/types/project";
 
-const FEATURED_COUNT = 3;
-const STAGES = ["Build", "PoC", "Production"];
+const FEATURED_COUNT = 4;
+const STAGES = ["Build", "PoC", "Production", "AgentCore"];
 
 export default function FeaturedProjects({ projects }: { projects: Project[] }) {
   const featured = projects.slice(0, FEATURED_COUNT);

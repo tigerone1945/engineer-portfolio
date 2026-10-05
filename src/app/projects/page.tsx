@@ -12,7 +12,7 @@ export default async function ProjectsPage() {
       <SectionTitle
         as="h1"
         title="Projects"
-        subtitle="業務課題 → Triage Agent → PoC → Production と段階的に高度化した実績。"
+        subtitle="業務課題 → Triage Agent → PoC → Production → AgentCore と段階的に高度化した実績。"
       />
       <div className="grid gap-4 sm:grid-cols-2">
         {projects.map((project) => (

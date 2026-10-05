@@ -104,3 +104,14 @@ describe("getProjectBySlug", () => {
     expect(await getProjectBySlug("../etc/passwd", dir)).toBeNull();
   });
 });
+
+describe("published content", () => {
+  it("does not use Markdown tables, which the renderer does not support", async () => {
+    // remark has no GFM plugin here, so a table would be shown as raw pipes.
+    const slugs = await getProjectSlugs();
+    for (const slug of slugs) {
+      const project = await getProjectBySlug(slug);
+      expect(project?.html, slug).not.toMatch(/\|\s*:?-{3,}:?\s*\|/);
+    }
+  });
+});
