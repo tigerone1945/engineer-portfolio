@@ -42,3 +42,5 @@ next-env.d.ts
 
 # private working documents (not published)
 /docs/portfolio-plan-v1.0.md
+/docs/development-guide-v1.0.md
+/docs/plan.md
