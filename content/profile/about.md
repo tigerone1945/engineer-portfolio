@@ -11,7 +11,7 @@ Python / AI開発
       ↓
 AIエージェント設計・実装
       ↓
-PoC / AWS本番運用
+PoC / AWS本番構成の設計・実装
 ```
 
 ## Focus
