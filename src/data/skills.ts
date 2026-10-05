@@ -4,7 +4,10 @@ export type SkillCategory = {
 };
 
 export const skills: SkillCategory[] = [
-  { category: "Programming", items: ["Python", "TypeScript", "SQL", "Markdown"] },
+  {
+    category: "Programming",
+    items: ["Python", "TypeScript", "Google Apps Script (GAS)", "SQL", "Markdown"],
+  },
   {
     category: "AI / Agent",
     items: [
