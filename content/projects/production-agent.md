@@ -6,8 +6,6 @@ order: 3
 techStack: [Python, FastAPI, Streamlit, PostgreSQL, Docker, AWS, Terraform]
 ---
 
-# Production AI Agent
-
 ## Overview
 
 PoC として動作した Triage Agent を、AWS 上で運用できる構成へ発展させたプロジェクトです（OPERATE の段階）。Agent の判断ロジックは変えず、実行環境（コンテナ・AWS）、永続化（SQLite → PostgreSQL）、Secret とログの扱いを変えています。

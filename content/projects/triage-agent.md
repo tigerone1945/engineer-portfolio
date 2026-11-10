@@ -6,8 +6,6 @@ order: 1
 techStack: [Python, OpenAI Agents SDK, Structured Output, Guardrails, Tracing, Pydantic, uv, pytest, mypy]
 ---
 
-# Triage AI Agent
-
 ## Overview
 
 カスタマーサポートに届く問い合わせを、カテゴリ・優先度で分類し、担当部署へ振り分けるAIエージェントです。確信度が低いケースや、解約・返金・法務などの高リスクなケースは、自動処理せず人間の確認（Human Review）へ回します。

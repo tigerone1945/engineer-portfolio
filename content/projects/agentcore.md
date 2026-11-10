@@ -6,8 +6,6 @@ order: 4
 techStack: [Python, Amazon Bedrock AgentCore, Terraform, IAM, pytest]
 ---
 
-# Amazon Bedrock AgentCore
-
 ## Overview
 
 Production 段階の Triage Agent を、AI エージェント向けのマネージド実行基盤である Amazon Bedrock AgentCore（Runtime / Memory / Gateway / Identity / Observability / Evaluations）へ載せ替えられるようにした拡張です（EXTEND の段階）。

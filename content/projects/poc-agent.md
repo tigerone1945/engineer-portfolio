@@ -6,8 +6,6 @@ order: 2
 techStack: [Python, Streamlit, FastAPI, SQLite, OpenAI Agents SDK, httpx]
 ---
 
-# PoC AI Agent
-
 ## Overview
 
 ローカルCLIで動いていた Triage Agent に、ブラウザから使える画面（Streamlit）と API（FastAPI）を加え、永続化を SQLite へ移した PoC です（VALIDATE の段階）。Agent の判断ロジック（分類・Human Review の判定・振り分け）は、前の段階から変えていません。
